@@ -9,7 +9,6 @@ set hidden
 set signcolumn=yes:2
 set relativenumber
 set number
-set termguicolors
 set undofile
 set spell
 set title
@@ -19,7 +18,6 @@ set wildmode=longest:full,full
 set nowrap
 set list
 set listchars=tab:▸\ ,trail:·
-" set mouse=a
 set scrolloff=8
 set sidescrolloff=8
 set nojoinspaces
@@ -36,6 +34,21 @@ set redrawtime=10000 " Allow more time for loading syntax on large files
 " Key maps
 "--------------------------------------------------------------------------
 let mapleader = "\<space>"
+
+nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
+nmap <leader>vc :edit ~/.config/nvim/coc-settings.json<cr>
+nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
+
+nmap <leader>k :nohlsearch<CR>
+
+" Make Y behave like the other capitals
+nnoremap Y y$
+
+" Open the current file in the default program
+nmap <leader>x :!xdg-open %<cr><cr>
+
+" Allow gf to open non-existent files
+map gf :edit <cfile><cr>
 
 inoremap jk <Esc>
 nnoremap <Leader>+ :vertical resize +5<CR>
@@ -58,7 +71,7 @@ endif
 call plug#begin(data_dir . '/plugins')
 
 "source ~/.config/nvim/plugins/airline.vim
-"source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/gruvbox.vim
 "source ~/.config/nvim/plugins/telescope.vim
 

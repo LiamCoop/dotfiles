@@ -1,1 +1,1 @@
-Plug 'gruvbox-community/gruvbox'
+Plug 'gruvbox-community/gruvbox', { 'as': 'gruvbox' }
